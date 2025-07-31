@@ -1,16 +1,25 @@
 use bevy::prelude::*;
+use bevy_panorbit_camera::{PanOrbitCamera, PanOrbitCameraPlugin};
 
-mod camera;
 mod hud;
-
-use crate::camera::CameraPlugin;
 
 fn main() {
 	App::new()
 		.add_plugins(DefaultPlugins)
-		.add_plugins(CameraPlugin)
+		.add_plugins(PanOrbitCameraPlugin)
+		.add_plugins(crate::hud::CameraDebugHud)
+		.add_systems(Startup, setup)
 		.add_systems(Startup, make_cube)
 		.run();
+}
+
+fn setup(mut commands: Commands) {
+	commands.spawn((
+		Transform::from_translation(Vec3::new(0., 1., 1.).normalize() * 50.0)
+			.looking_at(Vec3::ZERO, Vec3::Y),
+		Projection::from(PerspectiveProjection::default()),
+		PanOrbitCamera::default(),
+	));
 }
 
 fn make_cube(
