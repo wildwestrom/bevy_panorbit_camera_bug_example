@@ -1,13 +1,10 @@
 use bevy::prelude::*;
 use bevy_panorbit_camera::{PanOrbitCamera, PanOrbitCameraPlugin};
 
-mod hud;
-
 fn main() {
 	App::new()
 		.add_plugins(DefaultPlugins)
 		.add_plugins(PanOrbitCameraPlugin)
-		.add_plugins(crate::hud::CameraDebugHud)
 		.add_systems(Startup, setup)
 		.add_systems(Startup, make_cube)
 		.run();
@@ -28,8 +25,8 @@ fn make_cube(
 	mut materials: ResMut<Assets<StandardMaterial>>,
 ) {
 	commands.spawn((
-		Mesh3d(meshes.add(Cuboid::from_size(Vec3::splat(10.0)))),
+		Mesh3d(meshes.add(Rectangle::from_size(Vec2::splat(10.0)))),
 		MeshMaterial3d(materials.add(StandardMaterial::from_color(Color::oklch(1.0, 1.0, 0.0)))),
-		Transform::default(),
+		Transform::from_rotation(Quat::from_axis_angle(Vec3::X, -90_f32.to_radians())),
 	));
 }
