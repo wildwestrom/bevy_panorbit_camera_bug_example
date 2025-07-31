@@ -9,15 +9,8 @@ bevy = { version = "0.16.1", default-features = true, features = [
   "bevy_dev_tools",
   "wayland",
 ] }
-bevy_panorbit_camera = { version = "0.27.0", features = ["bevy_egui"] }
+bevy_panorbit_camera = { version = "0.27.1" }
 # For some reason my shit breaks on 0.27.0 and above
-bevy_egui = "0.35.1"
-log = { version = "0.4.27", features = [
-  "max_level_debug",
-  "release_max_level_warn",
-] }
-anyhow = "1.0"
-bevy_tweening = "0.13.0"
 
 # Enable a small amount of optimization in the dev profile.
 [profile.dev]

@@ -1,5 +1,4 @@
 use bevy::prelude::*;
-use bevy_egui::EguiPlugin;
 
 mod camera;
 mod hud;
@@ -9,7 +8,6 @@ use crate::camera::CameraPlugin;
 fn main() {
 	App::new()
 		.add_plugins(DefaultPlugins)
-		.add_plugins(EguiPlugin::default())
 		.add_plugins(CameraPlugin)
 		.add_systems(Startup, make_cube)
 		.run();
