@@ -901,9 +901,8 @@ dependencies = [
 
 [[package]]
 name = "bevy_panorbit_camera"
-version = "0.27.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "66273755984c3ef10a3e1ab47f5a06ea560bb2e8d56ca4c4a6fb34d1300602c0"
+version = "0.27.0"
+source = "git+https://github.com/Plonq/bevy_panorbit_camera?rev=b49f32cf54bd6d986b959133bd91ca0fe5e1fc96#b49f32cf54bd6d986b959133bd91ca0fe5e1fc96"
 dependencies = [
  "bevy",
 ]

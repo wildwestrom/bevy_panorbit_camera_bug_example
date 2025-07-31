@@ -9,8 +9,9 @@ bevy = { version = "0.16.1", default-features = true, features = [
   "bevy_dev_tools",
   "wayland",
 ] }
-bevy_panorbit_camera = { version = "0.27.0" }
-# For some reason my shit breaks on 0.27.0 and above
+bevy_panorbit_camera = { git = "https://github.com/Plonq/bevy_panorbit_camera", rev = "b49f32cf54bd6d986b959133bd91ca0fe5e1fc96" }
+# This is the exact commit where the bug appears, but why does the bug happen when I fetch 0.27.0 from crates.io?
+# It should only happen when I go to 0.27.1.
 
 # Enable a small amount of optimization in the dev profile.
 [profile.dev]
