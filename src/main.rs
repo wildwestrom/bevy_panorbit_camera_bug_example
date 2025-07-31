@@ -1,11 +1,4 @@
-use bevy::pbr::wireframe::{WireframeConfig, WireframePlugin};
-use bevy::{
-	prelude::*,
-	render::{
-		RenderPlugin,
-		settings::{WgpuFeatures, WgpuSettings},
-	},
-};
+use bevy::prelude::*;
 use bevy_egui::EguiPlugin;
 
 mod camera;
